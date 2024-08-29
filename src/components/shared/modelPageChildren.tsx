@@ -9,8 +9,8 @@ import { useCartStore } from "@/store/cart";
 type Props = { id: number; name: string; price: number };
 
 export function ModelPageChildren({ id, name, price }: Props) {
-  if (!id) return notFound();
   const addCartItem = useCartStore((state) => state.addCartItem);
+  if (!id) return notFound();
   const addClick = (id: number): any => {
     addCartItem({
       productItemId: id,
